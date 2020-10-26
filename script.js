@@ -30,12 +30,17 @@ function startTimer() {
 
 buttonStart.onclick = function () {
     interval = setInterval(startTimer);
+    console.log('clicked');
+    buttonStart = document.getElementById('button-start').disabled= true;
 }
+
+
 
 
 // this function will run when you click stop
 buttonStop.onclick = function() {
     clearInterval(interval); 
+    buttonStart = document.getElementById('button-start').disabled= false;
 }
 
 
@@ -46,4 +51,5 @@ buttonReset.onclick = function() {
     seconds = "00";
     appendTens.innerHTML = tens;
     appendSeconds.innerHTML = seconds;
+    buttonStart = document.getElementById('button-start').disabled= false;
 }
